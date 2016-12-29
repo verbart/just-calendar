@@ -1,23 +1,24 @@
 export default {
     bindings: {
-        locale: '=?',
-        fromMonday: '=?',
-        weekdays: '=?'
+        locale: '<?',
+        fromMonday: '<?',
+        weekdays: '<?'
     },
     templateUrl: 'components/just-calendar.html',
     controller: class {
         constructor(moment) {
-            moment.locale(this.locale);
+            this.$onInit = function () {
+                moment.locale(this.locale);
 
-            this.fromMonday = false;
-            this.weekdays = moment.weekdaysShort();
-            this.selected = moment();
-            this.month = this.selected.clone();
+                this.weekdays = this.weekdays || moment.weekdaysShort();
+                this.selected = moment();
+                this.month = this.selected.clone();
 
-            const start = this.selected.clone().date(1);
+                const start = this.selected.clone().date(1);
 
-            this.removeTime(start.day(this.fromMonday?-6:1));
-            this.buildMonth(start, this.month);
+                this.removeTime(start.day(this.fromMonday?-6:1));
+                this.buildMonth(start, this.month);
+            };
         }
         select(day) {
             this.selected = day.date;
