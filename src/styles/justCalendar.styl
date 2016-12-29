@@ -1,0 +1,60 @@
+theme = #4cae4c
+
+just-calendar
+  display block
+  max-width 320px
+  margin auto
+  font-family sans-serif
+  text-transform uppercase
+  overflow auto
+  table
+    width 100%
+    min-width 240px
+    border-spacing 0
+    border-collapse collapse
+    table-layout fixed
+    tr
+      border 1px solid #bebebe
+    th, td
+      height 30px
+      padding 5px
+      text-align center
+      font-weight inherit
+
+  .header
+    height 40px
+    background theme
+    color white
+    tr
+      border-bottom none
+    &__nav
+      width 40px
+      cursor pointer
+      transition .4s
+      &:hover
+        opacity .5
+
+  .month
+    background #fff
+    cursor default
+    th, td
+      border-right 1px solid #bebebe
+      &:last-child
+        border-right 0
+
+  .weekdays
+    &__day
+      color theme
+      font-size .95rem
+
+  .week
+    &__day
+      font-size .85rem
+      &_otherMoth
+        color #c0c0c0
+      &_today
+        background theme
+        color #fff
+      &_selected
+        background rgba(theme, .2)
+        color theme

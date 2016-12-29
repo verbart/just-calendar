@@ -1,0 +1,15 @@
+.jumbotron.text-center
+  .container(ng-controller='AppCtrl as ctrl')
+    h1 Super simple&nbsp;
+      b justCalendar!
+
+    p.panel-body
+      b justCalendar&nbsp;
+      | - just use it!
+
+
+    just-calendar(locale='ru' from-monday='true' weekdays='ctrl.weekdays')
+
+    br
+
+    a.btn.btn-primary.btn-lg.panel-body(href='') Start NOW!
