@@ -14,31 +14,23 @@ export default {
                 this.selected = moment();
                 this.month = this.selected.clone();
 
-                const start = this.selected.clone().date(1);
+                const start = this.selected.clone().date(this.fromMonday?0:1);
 
-                this.removeTime(start.day(this.fromMonday?-6:1));
+                this.removeTime(start.day(0));
                 this.buildMonth(start, this.month);
             };
         }
         select(day) {
             this.selected = day.date;
-            if (!day.isCurrentMonth) day.number < 7 ? this.next() : this.previous();
+            if (!day.isCurrentMonth) day.number < 7 ? this.changeMonth(+1) : this.changeMonth(-1);
         }
-        next() {
-            const next = this.month.clone();
+        changeMonth(changeTo) {
+            const current = this.month.clone();
 
-            this.removeTime(next.month(next.month()+1).date(this.fromMonday?0:1));
-            this.month.month(this.month.month()+1);
+            this.removeTime(current.month(current.month()+changeTo).date(this.fromMonday?0:1));
+            this.month.month(this.month.month()+changeTo);
 
-            this.buildMonth(next, this.month);
-        }
-        previous() {
-            const previous = this.month.clone();
-
-            this.removeTime(previous.month(previous.month()-1).date(this.fromMonday?0:1));
-            this.month.month(this.month.month()-1);
-
-            this.buildMonth(previous, this.month);
+            this.buildMonth(current, this.month);
         }
         removeTime(date) {
             return date.day(this.fromMonday?1:0).hour(0).minute(0).second(0).millisecond(0);

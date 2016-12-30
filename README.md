@@ -1,7 +1,7 @@
 # justCalendar
 It's a super simple calendar as a AngularJS Component
 
-![Calendar preview](http://i.imgur.com/sBxMMKS.png)
+![Calendar preview](http://i.imgur.com/tVizf0o.png)
 
 ### Developing
 

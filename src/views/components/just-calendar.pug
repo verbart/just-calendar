@@ -1,7 +1,7 @@
 table.header
-    th.header__nav.header__nav_previous(ng-click='$ctrl.previous()') <
+    th.header__nav.header__nav_previous(ng-click='$ctrl.changeMonth(-1)') <
     th.header__current {{$ctrl.month.format('MMMM YYYY')}}
-    th.header__nav.header__nav_next(ng-click='$ctrl.next()') >
+    th.header__nav.header__nav_next(ng-click='$ctrl.changeMonth(+1)') >
 
 table.month
     thead.weekdays
