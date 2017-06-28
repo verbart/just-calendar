@@ -1,6 +1,5 @@
-/node_modules
-*.map
+node_modules
 *.log
-/.idea
-/.gulp
-/public
+.idea
+.gulp
+package-lock.json

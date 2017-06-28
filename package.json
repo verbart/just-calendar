@@ -1,6 +1,7 @@
 {
-  "name": "just-calendar",
-  "version": "0.0.1",
+  "name": "ng-just-calendar",
+  "description": "A super simple calendar for yours projects on AngularJS",
+  "version": "0.1.0",
   "author": "Artem Verbat",
   "homepage": "https://github.com/verbart/just-calendar#readme",
   "repository": {
@@ -11,11 +12,12 @@
     "url": "https://github.com/verbart/just-calendar/issues"
   },
   "scripts": {
-    "start": "NODE_ENV=development ./node_modules/.bin/gulp",
-    "build": "NODE_ENV=production ./node_modules/.bin/gulp build"
+    "start": "gulp",
+    "build": "NODE_ENV=production gulp build"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.0",
+    "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.18.0",
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.5",
@@ -33,14 +35,17 @@
     "gulp-tinypng-nokey": "^1.0.4",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "html-loader": "^0.4.5",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^3.0.0"
   },
   "dependencies": {
-    "angular": "^1.6.1",
+    "angular": "^1.6.4",
     "angular-moment": "^1.0.1",
     "angular-ui-router": "^0.3.2",
     "bootstrap": "^3.3.7",
-    "moment": "^2.17.1"
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
   }
 }
