@@ -3,6 +3,12 @@
   "version": "0.2.0",
   "main": "./src/app/ng-just-calendar/index.js",
   "description": "A super simple calendar for yours projects on AngularJS",
+  "keywords": [
+    "calendar",
+    "date",
+    "angular",
+    "just-calendar"
+  ],
   "author": "Artem Verbat",
   "license": "MIT",
   "homepage": "https://github.com/verbart/just-calendar#readme",
