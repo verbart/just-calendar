@@ -9,7 +9,7 @@ It's a super simple calendar as a AngularJS Component
 ### Usage
 - **Install**
   - `npm install ng-just-calendar -S`
-  - Use anything variant for include it
+  - Use `import 'ng-just-calendar';` or `require('ng-just-calendar');`
   - Inject it to your AngularJS module:
     `angular.module('myApp', ['ngJustCalendar']);`
   - Use in views - `<ng-just-calendar>`

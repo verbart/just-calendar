@@ -2,13 +2,15 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import angularMoment from 'angular-moment';
 
-import justCalendar from './components/just-calendar/just-calendar';
+import './app/ng-just-calendar';
 
 
 angular
-  .module('ngJustCalendar', [
+  .module('ngJustCalendarApp', [
     uiRouter,
-    angularMoment
+    angularMoment,
+
+    'ngJustCalendar'
   ])
   .config(function router($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');
@@ -24,5 +26,4 @@ angular
         url: '/404',
         templateUrl: 'views/app/errors/404.html'
       });
-  })
-  .component('ngJustCalendar', justCalendar);
+  });

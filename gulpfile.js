@@ -28,7 +28,7 @@ gulp.task('views', function buildHTML() {
     .pipe(rename(path => {
       if (path.dirname !== '.') path.dirname = ('views/' + path.dirname);
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('styles', function () {
@@ -49,7 +49,7 @@ gulp.task('styles', function () {
     .pipe(gulpIf(isDevelopment, sourcemaps.write()))
     .pipe(gulpIf(!isDevelopment, cleanCSS()))
     .pipe(rename('style.css'))
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./public/css'))
 });
 
 gulp.task('scripts', function(done) {
@@ -69,11 +69,11 @@ gulp.task('scripts', function(done) {
 
 gulp.task('misc', function () {
   return gulp.src('./src/assets/misc/**/*.*')
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./public'));
 });
 
 gulp.task('clean', function () {
-  return del('./dist')
+  return del('./public')
 });
 
 gulp.task('watch', function () {
@@ -83,23 +83,23 @@ gulp.task('watch', function () {
   gulp.watch('./src/assets/misc/**/*.*', gulp.series('misc'));
 
   if (!isDevelopment) {
-    gulp.watch('./dist/views/**/*.*', gulp.series('scripts'));
+    gulp.watch('./public/views/**/*.*', gulp.series('scripts'));
   }
 });
 
 gulp.task('serve', function () {
   browserSync.init({
     // proxy: 'example.com',
-    // files: 'dist/**/*.*',
+    // files: 'public/**/*.*',
     // https: true,
-    server: './dist',
+    server: './public',
     port: 8080,
     middleware: [historyApiFallback({
         logger: gutil.log
     })]
   });
 
-  browserSync.watch('./dist/**/*.*').on('change', browserSync.reload);
+  browserSync.watch('./public/**/*.*').on('change', browserSync.reload);
 });
 
 gulp.task('build', gulp.series(
