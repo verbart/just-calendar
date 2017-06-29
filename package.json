@@ -1,6 +1,6 @@
 {
   "name": "ng-just-calendar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./src/app/ng-just-calendar/index.js",
   "description": "A super simple calendar for yours projects on AngularJS",
   "keywords": [
