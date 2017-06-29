@@ -79,7 +79,7 @@ const justCalendar = {
 if (IS_DEVELOPMENT) {
   justCalendar.templateUrl = 'views/components/just-calendar/just-calendar.html';
 } else {
-  justCalendar.template = require('../../../dist/views/components/just-calendar/just-calendar.html');
+  justCalendar.template = require('../../../public/views/components/just-calendar/just-calendar.html');
 }
 
 
