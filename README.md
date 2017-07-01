@@ -16,6 +16,13 @@ It's a super simple calendar as a AngularJS Component
 - **Custom language**
   - Include [angular-moment](https://github.com/urish/angular-moment) to project
   - Just configure MomentJS `moment.locale('ru');`
+- **Options**
+  - `<ng-just-calendar selected='moment()'>`
+    - Format: MomentJS date
+    - Mission: Set custom date as selected
+  - `<ng-just-calendar on-update='onUpdate($event); isOpen = false;'>`
+    - Format: Expressions list
+    - Mission: Callback method, fire on select new date
 
 ---
 

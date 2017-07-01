@@ -1,17 +1,14 @@
 const justCalendar = {
   bindings: {
-    locale: '@?',
     weekdays: '<?',
     selected: '=?',
     onUpdate: '&'
   },
   controller: class {
     constructor(moment, $scope) {
-      moment.locale(window.navigator.language);
-
       this.$scope = $scope;
       this.$onInit = function () {
-        moment.locale(this.locale);
+        moment.locale(window.navigator.language);
 
         this.firstDayOfWeek = moment.localeData().firstDayOfWeek();
         this.weekdays = this.weekdays || moment.weekdaysMin(true);

@@ -8,7 +8,7 @@
     thead.weekdays
       th.weekdays__day(ng-repeat='day in $ctrl.weekdays') {{day}}
 
-    tr.week(ng-repeat='week in $ctrl.weeks')
+    tr.week(ng-repeat='week in $ctrl.weeks track by $index')
       td.week__day(
       ng-repeat='day in week.days'
       ng-click='$ctrl.select(day);'
