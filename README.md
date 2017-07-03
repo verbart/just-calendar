@@ -26,10 +26,11 @@ It's a super simple calendar as a AngularJS Component
 
 ---
 
-### Developing
+### Developing or view example of usage
 
-1. Run `npm install` to install dependencies.
-2. Run `npm start` to start the development server.  
+1. [Download this project](https://github.com/verbart/just-calendar/archive/master.zip), go to directory with him.
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the development server.  
    It should automatically open the client in your browser when ready.
 
 ### Build
